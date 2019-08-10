@@ -1,0 +1,359 @@
+'turn_tv1_on':
+  alias: Turn on tv1
+  - data:
+      entity_id: media_player.lg_webos_smart_tv1
+    service: media_player.turn_on
+'turn_tv2_on':
+  alias: Turn on tv2
+  - data:
+      entity_id: media_player.lg_webos_smart_tv2
+    service: media_player.turn_on
+'turn_onkyo_on':
+  alias: Turn on onkyo
+  - data:
+      entity_id: media_player.nr646
+    service: media_player.turn_on
+
+'turn_all_off':
+  alias: Turn Off TVs & AVR
+  sequence:
+  - data:
+      entity_id: media_player.lg_webos_smart_tv1
+    service: media_player.turn_off
+  - data:
+      entity_id: media_player.lg_webos_smart_tv2
+    service: media_player.turn_off
+  - data:
+      entity_id: media_player.nr646
+    service: media_player.turn_off
+
+'tv1_ps4':
+  alias: TV1 PS4
+  - data:
+      entity_id: media_player.lg_webos_smart_tv1
+      source: Ps4
+    service: media_player.select_source
+
+'tv1_switch':
+  alias: TV1 Switch
+  - data:
+      entity_id: media_player.lg_webos_smart_tv1
+      source: Switch
+    service: media_player.select_source
+'tv1_ktv':
+  alias: TV1 KTV
+  - data:
+      entity_id: media_player.lg_webos_smart_tv1
+      source: KTV
+    service: media_player.select_source
+'tv1_onkyo':
+  alias: TV1 Onkyo
+  - data:
+      entity_id: media_player.lg_webos_smart_tv1
+      source: ONKYO
+    service: media_player.select_source
+'tv1_vol_up':
+  alias: TV1 volume up
+  sequence:
+  - data:
+      entity_id: media_player.lg_webos_smart_tv1
+    service: media_player.volume_up      
+'tv1_vol_down':
+  alias: TV1 volume down
+  sequence:
+  - data:
+      entity_id: media_player.lg_webos_smart_tv1
+    service: media_player.volume_down
+'tv1_netflix':
+  alias: TV1 netflix
+  sequence:
+  - data:
+      entity_id: media_player.lg_webos_smart_tv1
+      source: Netflix
+    service: media_player.select_source
+        
+
+'tv1_youtube':
+  alias: TV1 youtube
+  sequence:
+  - data:
+      entity_id: media_player.lg_webos_smart_tv1
+      source: YouTube
+    service: media_player.select_source
+
+
+'amp_vol_up':
+  alias: amp
+  sequence:
+  - data:
+      entity_id: media_player.nr646
+      source:
+    service: media_player.volume_up
+
+'amp_vol_down':
+  alias: amp
+  sequence:
+  - data:
+      entity_id: media_player.nr646
+      source:
+    service: media_player.volume_down
+
+'amp_ps4':
+  alias: amp
+  sequence:
+  - data:
+      entity_id: media_player.nr646
+      source: PC
+    service: media_player.select_source
+
+'amp_switch':
+  alias: amp
+  sequence:
+  - data:
+      entity_id: media_player.nr646
+      source: CBL
+    service: media_player.select_source
+
+'amp_ktv':
+  alias: amp
+  sequence:
+  - data:
+      entity_id: media_player.nr646
+      source: BD
+    service: media_player.select_source
+
+
+
+
+
+
+'1522644744669':
+  alias: Turn On TVs & AVR
+  sequence:
+  - data:
+      entity_id: media_player.lg_webos_smart_tv
+    entity_id: media_player.nr646
+    service: media_player.turn_on
+  - data:
+      entity_id: media_player.nr646
+    entity_id: media_player.lg_webos_smart_tv
+    service: media_player.turn_on
+  - data:
+      packet:
+      - JgAQAQs7CxcMFwsYCxgLFww6CzsLFww6CxgLGAsXCzsLGAsABewLOgwXChkKGQoYCzsKGQoYCzsKGQo7CzsKPAoYCjwKAAWmCzsKGQoZChgKGQoZCjsLOwsYCjsLGAoZChgLOwsYCwAF7As7CxgLFwwXCxgLOgwXDBcLOgwXDDoLOgw6CxgLOgwABaQNOgsYCxgLFwwXCxgLOgw6CxgLOgwXCxgLFww6CxgLAAXsDDoLFwwXDBcLGAs5DRcLGAs6DBcLOws6DDoLGAs6DAAFpQw5DBcMFwsYCxgLFww6CzsLFww6CxgLFwwXCzsLFwwABewLOgwXCxgLGAsXDDoLGAsYCzoLGAs6DDoLOwsXDDoLAA0FAAAAAAAAAAA=
+    service: switch.broadlink_send_packet_192_168_1_106
+'1522648898669':
+  alias: Turn Off TVs & AVR
+  sequence:
+  - data:
+      entity_id: media_player.lg_webos_smart_tv
+    service: media_player.turn_off
+  - data:
+      entity_id: media_player.nr646
+    service: media_player.turn_off
+  - data:
+      packet:
+      - JgAQAQs7CxcMFwsYCxgLFww6CzsLFww6CxgLGAsXCzsLGAsABewLOgwXChkKGQoYCzsKGQoYCzsKGQo7CzsKPAoYCjwKAAWmCzsKGQoZChgKGQoZCjsLOwsYCjsLGAoZChgLOwsYCwAF7As7CxgLFwwXCxgLOgwXDBcLOgwXDDoLOgw6CxgLOgwABaQNOgsYCxgLFwwXCxgLOgw6CxgLOgwXCxgLFww6CxgLAAXsDDoLFwwXDBcLGAs5DRcLGAs6DBcLOws6DDoLGAs6DAAFpQw5DBcMFwsYCxgLFww6CzsLFww6CxgLFwwXCzsLFwwABewLOgwXCxgLGAsXDDoLGAsYCzoLGAs6DDoLOwsXDDoLAA0FAAAAAAAAAAA=
+    service: switch.broadlink_send_packet_192_168_1_106
+    
+'nr646_vol_up':
+  alias: AVR volume up
+  sequence:
+  - data:
+      entity_id: media_player.nr646
+    service: media_player.volume_set
+    data_template:
+      #volume_level: '{{ [states.media_player.nr646.attributes.volume_level | float + 0.05,  0.45] |min }}'
+      volume_level: '{{ states.media_player.nr646.attributes.volume_level | float + 0.05 }}'
+'nr646_vol_down':
+  alias: AVR volume down
+  sequence:
+  - data:
+      entity_id: media_player.nr646
+    service: media_player.volume_set
+    data_template:
+      volume_level: '{{ states.media_player.nr646.attributes.volume_level | float - 0.05 }}'
+
+'nr646_vol_max':
+  alias: AVR volume max
+  sequence:
+  - data:
+      entity_id: media_player.nr646
+    service: media_player.volume_set
+    data_template:
+      volume_level: '{{ 0.5 }}'
+      
+'nr646_vol_max_40':
+  alias: AVR volume max
+  sequence:
+  - data:
+      entity_id: media_player.nr646
+    service: media_player.volume_set
+    data_template:
+      volume_level: '{{ 0.4 }}'
+
+'nr646_vol_max_50':
+  alias: AVR volume max
+  sequence:
+  - data:
+      entity_id: media_player.nr646
+    service: media_player.volume_set
+    data_template:
+      volume_level: '{{ 0.5 }}'
+      
+'nr646_ps4':
+  alias: AVR PS4
+  sequence:
+  - data:
+      entity_id: media_player.nr646
+      volume_level: 0.35
+    service: media_player.volume_set
+  - data:
+      entity_id: media_player.nr646
+      source: Video 6
+    service: media_player.select_source
+
+'nr646_ktv':
+  alias: AVR KTV
+  sequence:
+  - data:
+      entity_id: media_player.nr646
+      volume_level: 0.35
+    service: media_player.volume_set
+  - data:
+      entity_id: media_player.nr646
+      source: Bluray
+    service: media_player.select_source
+  
+'nr646_switch':
+  alias: AVR switch
+  sequence:
+  - data:
+      entity_id: media_player.nr646
+      volume_level: 0.4
+    service: media_player.volume_set
+  - data:
+      entity_id: media_player.nr646
+      source: Video 3
+    service: media_player.select_source
+
+'nr646_apple_tv':
+  alias: AVR apple tv
+  sequence:
+  - data:
+      entity_id: media_player.nr646
+      volume_level: 0.4
+    service: media_player.volume_set
+  - data:
+      entity_id: media_player.nr646
+      source: Video 2
+    service: media_player.select_source
+
+'lg_netflix':
+  alias: LG netflix
+  sequence:
+  - data:
+      entity_id: media_player.lg_webos_smart_tv
+      volume_level: 0.35
+    service: media_player.volume_set
+  - data:
+      entity_id: media_player.lg_webos_smart_tv
+      source: Netflix
+    service: media_player.select_source
+        
+
+'lg_youtube':
+  alias: LG youtube
+  sequence:
+  - data:
+      entity_id: media_player.lg_webos_smart_tv
+      volume_level: 0.35
+    service: media_player.volume_set
+  - data:
+      entity_id: media_player.lg_webos_smart_tv
+      source: YouTube
+    service: media_player.select_source
+
+'lg_ps4':
+  alias: LG PS4
+  sequence:
+  - data:
+      entity_id: media_player.lg_webos_smart_tv
+      volume_level: 0.35
+    service: media_player.volume_set
+  - data:
+      entity_id: media_player.lg_webos_smart_tv
+      source: HDMI2
+    service: media_player.select_source
+
+'lg_switch':
+  alias: LG Switch
+  sequence:
+  - data:
+      entity_id: media_player.lg_webos_smart_tv
+      volume_level: 0.35
+    service: media_player.volume_set
+  - data:
+      entity_id: media_player.lg_webos_smart_tv
+      source: HDMI3
+    service: media_player.select_source
+
+'lg_vol_up':
+  alias: LG volume up
+  sequence:
+  - data:
+      entity_id: media_player.lg_webos_smart_tv
+    service: media_player.volume_set
+    data_template:
+      #volume_level: '{{ [states.media_player.lg_webos_smart_tv.attributes.volume_level | float + 0.1, 0.35] |min }}'
+      volume_level: '{{ states.media_player.lg_webos_smart_tv.attributes.volume_level | float + 0.1 }}'
+      
+'lg_vol_down':
+  alias: LG volume down
+  sequence:
+  - data:
+      entity_id: media_player.lg_webos_smart_tv
+    service: media_player.volume_set
+    data_template:
+      volume_level: '{{ states.media_player.lg_webos_smart_tv.attributes.volume_level | float - 0.1 }}'
+
+'lg_vol_max':
+  alias: LG volume max
+  sequence:
+  - data:
+      entity_id: media_player.lg_webos_smart_tv
+    service: media_player.volume_set
+    data_template:
+      volume_level: '{{ 0.45 }}'
+
+'lg_15min':
+  alias: LG 15 min left
+  sequence:
+  - data:
+      message: "距離時段完結仲有15 分鐘。<br /><img width='300' height='300' src='https://i.imgur.com/nXGe9Mf.jpg'/>"
+      #message: 距離時段完結仲有15 分鐘。<br /><img width='300' height='300' src='https://i.imgur.com/nXGe9Mf.jpg'/>
+    service: notify.lg_tv
+
+'lg_5min':
+  alias: LG 5 min left
+  sequence:
+  - data:
+      message: "距離時段完結仲有5 分鐘。<br /><img width='300' height='300' src='https://i.imgur.com/nXGe9Mf.jpg'/>"
+      #message: 距離時段完結仲有15 分鐘。<br /><img width='300' height='300' src='https://i.imgur.com/nXGe9Mf.jpg'/>
+    service: notify.lg_tv
+    
+'lg_close_door':
+  alias: LG close door
+  sequence:
+  - data:
+      message: "系統提示：請關上兩對門，以防聲浪外泄到房外，謝謝！<br /><img width='300' height='300' src='https://i.imgur.com/nXGe9Mf.jpg'/>"
+    service: notify.lg_tv
+
+'lg_play_youtube':
+  alias: LG play youtube
+  sequence:
+  - data:
+      entity_id: media_player.lg_webos_smart_tv
+      media_content_id: "https://www.youtube.com/watch?v=qghQ5eKGcyE"
+      media_content_type: video/youtube
+    service: media_extractor.play_media

@@ -1,0 +1,234 @@
+#
+# Main arguments, all optional
+#
+title: Party Go HCC
+widget_dimensions: [120, 120]
+widget_size: [1, 1]
+widget_margins: [5, 5]
+columns: 8
+global_parameters:
+    use_comma: 0
+    precision: 1
+    use_hass_icon: 1
+    namespace: default
+    devices:
+      media_player:
+        step: 5
+
+style_active: "color: grey"
+
+
+clock:
+    widget_type: clock
+    date_format_country: "us"
+    date_format_options:
+      weekday: "short"
+      day: "numeric"
+      month: "numeric"
+
+lights_label:
+    widget_type: label
+    title: Lights
+    widget_style: "background: white; font-size: 150%;"
+    title_style: "color:black;"
+    
+tv1_label:
+    widget_type: label
+    title: TV1
+    widget_style: "background: white; font-size: 150%;"
+    title_style: "color:black;"
+
+tv2_label:
+    widget_type: label
+    title: TV2
+    widget_style: "background: white; font-size: 150%;"
+    title_style: "color:black;"
+    
+turn_on_tv1:
+    title: Power On TV1
+    widget_type: script
+    entity: script.turn_tv1_on
+    icon_on: fa-hourglass-half
+    icon_off: fa-square
+
+turn_on_tv2:
+    title: Power On TV2
+    widget_type: script
+    entity: script.turn_tv2_on
+    icon_on: fa-hourglass-half
+    icon_off: fa-square
+
+turn_on_amp:
+    title: Power On AMP
+    widget_type: script
+    entity: script.turn_onkyo_on
+    icon_on: fa-hourglass-half
+    icon_off: fa-square
+
+turn_off_all:
+    title: Power Off
+    widget_type: script
+    entity: script.turn_all_off
+    icon_on: fa-hourglass-half
+    icon_off: fa-square
+
+tolietlight:
+    title: Toliet light
+    widget_type: switch
+    entity: switch.toilet_light
+
+tvlight1:
+    title: TV light 1
+    widget_type: switch
+    entity: switch.light_2
+    
+sofalight2:
+    title: Sofa light 2
+    widget_type: switch
+    entity: switch.light_1
+
+majonglight3:
+    title: Majong light 3
+    widget_type: switch
+    entity: switch.light_6
+
+majonglight4:
+    title: Majong light 4
+    widget_type: switch
+    entity: switch.light_5
+
+doorlight:
+    title: Door light
+    widget_type: switch
+    entity: switch.light_7
+
+dinninglight:
+    title: Dinning light
+    widget_type: switch
+    entity: switch.light_8
+
+tv1_ps4:
+    title: PS4 on TV1
+    widget_type: script
+    entity: script.tv1_ps4
+    icon_on: fa-hourglass-half
+    icon_off: fa-gamepad
+
+tv1_switch:
+    title: Switch on TV1
+    widget_type: script
+    entity: script.tv1_switch
+    icon_on: fa-hourglass-half
+    icon_off: fa-gamepad
+
+tv1_ktv:
+    title: KTV on TV1
+    widget_type: script
+    entity: script.tv1_ktv
+    icon_on: fa-hourglass-half
+    icon_off: fa-gamepad
+
+tv1_onkyo:
+    title: Copy TV2
+    widget_type: script
+    entity: script.tv1_onkyo
+    icon_on: fa-hourglass-half
+    icon_off: fa-gamepad
+
+tv1_netflix:
+    title: Netflix TV1
+    widget_type: script
+    entity: script.tv1_netflix
+    icon_on: fa-hourglass-half
+    icon_off: fa-gamepad
+
+tv1_vol_up:
+    widget_type: script
+    entity: script.tv1_vol_up
+    title: Volume +
+    icon_on: fa-hourglass-half
+    icon_off: fa-plus
+    
+tv1_vol_down:
+    widget_type: script
+    entity: script.tv1_vol_down
+    title: Volume -
+    icon_on: fa-hourglass-half
+    icon_off: fa-minus
+    
+
+tv1_ps4:
+    title: PS4 on TV1
+    widget_type: script
+    entity: script.tv1_ps4
+    icon_on: fa-hourglass-half
+    icon_off: fa-gamepad
+
+tv1_switch:
+    title: Switch on TV1
+    widget_type: script
+    entity: script.tv1_switch
+    icon_on: fa-hourglass-half
+    icon_off: fa-gamepad
+
+tv1_ktv:
+    title: KTV on TV1
+    widget_type: script
+    entity: script.tv1_ktv
+    icon_on: fa-hourglass-half
+    icon_off: fa-gamepad
+
+tv1_onkyo:
+    title: Copy TV2
+    widget_type: script
+    entity: script.tv1_onkyo
+    icon_on: fa-hourglass-half
+    icon_off: fa-gamepad
+
+tv1_netflix:
+    title: Netflix TV1
+    widget_type: script
+    entity: script.tv1_netflix
+    icon_on: fa-hourglass-half
+    icon_off: fa-gamepad
+
+amp_vol_up:
+    widget_type: script
+    entity: script.amp_vol_up
+    title: Volume +
+    icon_on: fa-hourglass-half
+    icon_off: fa-plus
+    
+amp_vol_down:
+    widget_type: script
+    entity: script.amp_vol_down
+    title: Volume -
+    icon_on: fa-hourglass-half
+    icon_off: fa-minus
+
+amp_ps4:
+    title: PS4 on TV2
+    widget_type: script
+    entity: script.amp_ps4
+    icon_on: fa-hourglass-half
+    icon_off: fa-gamepad
+
+amp_switch:
+    title: Switch on TV2
+    widget_type: script
+    entity: script.amp_switch
+    icon_on: fa-hourglass-half
+    icon_off: fa-gamepad
+
+amp_ktv:
+    title: KTV on TV2
+    widget_type: script
+    entity: script.amp_ktv
+    icon_on: fa-hourglass-half
+    icon_off: fa-gamepad
+    
+layout:
+    - clock(4x1), turn_on_tv1, turn_on_tv2, turn_on_amp, turn_off_all
+    - lights_label, tvlight1, sofalight2, majonglight3, majonglight4, dinninglight, doorlight, tolietlight
+    - tv1_label, tv1_ps4, tv1_switch, tv1_ktv, tv1_onkyo, tv1_netflix, tv1_vol_up, tv1_vol_down
+    - tv2_label, amp_ps4, amp_switch, amp_ktv, amp_vol_up, amp_vol_down

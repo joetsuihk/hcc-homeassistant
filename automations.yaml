@@ -1,0 +1,34 @@
+- id: '1539247412147'
+  alias: Window Air Con inSysn
+  trigger:
+  - entity_id: switch.airconwindow
+    from: 'off'
+    platform: state
+    to: 'on'
+  - entity_id: switch.airconwindow
+    from: 'on'
+    platform: state
+    to: 'off'
+  condition: []
+  action:
+  - data:
+      entity_id: switch.aircon1
+    service: switch.toggle
+- id: '1539714201708'
+  alias: Split Type Air Con Turn On
+  trigger:
+  - entity_id: switch.airconsplit
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+  - data:
+      entity_id: switch.air_con_remote
+    service: switch.turn_on
+  - data:
+      entity_id: switch.air_con_remote
+    service: switch.turn_on
+  - data:
+      entity_id: switch.air_con_remote
+    service: switch.turn_on

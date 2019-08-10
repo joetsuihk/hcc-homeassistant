@@ -1,0 +1,273 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: 22.291
+  longitude: 114.15
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 0
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Asia/Hong_Kong
+  # Customization file
+  customize: !include customize.yaml
+  
+# Add Configurator icon in side bar
+panel_iframe:
+  configurator:
+    title: Configurator
+    icon: mdi:wrench
+    url: http://192.168.1.110:3218
+
+# Add MQTT Mosquitto
+mqtt:
+  broker: core-mosquitto
+  username: partygo
+  password: sandwichclass
+
+
+
+# Add Sonoff Light Switch 
+
+switch:
+  - platform: mqtt
+    name: "Light 1"
+    state_topic: "stat/T1UK0302/POWER1"
+    command_topic: "cmnd/T1UK0302/POWER1"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false
+
+  - platform: mqtt
+    name: "Light 2"
+    state_topic: "stat/T1UK0302/POWER2"
+    command_topic: "cmnd/T1UK0302/POWER2"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false
+
+  - platform: mqtt
+    name: "Light 3"
+    state_topic: "stat/T1UK0302/POWER3"
+    command_topic: "cmnd/T1UK0302/POWER3"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false
+
+  - platform: mqtt
+    name: "Exhust Fan 1"
+    state_topic: "stat/T1UK0303/POWER1"
+    command_topic: "cmnd/T1UK0303/POWER1"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false
+
+  - platform: mqtt
+    name: "Exhust Fan 2"
+    state_topic: "stat/T1UK0303/POWER2"
+    command_topic: "cmnd/T1UK0303/POWER2"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false
+
+  - platform: mqtt
+    name: "Exhust Fan 3"
+    state_topic: "stat/T1UK0303/POWER3"
+    command_topic: "cmnd/T1UK0303/POWER3"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false
+
+  - platform: mqtt
+    name: "Light 4"
+    state_topic: "stat/T1UK0301/POWER1"
+    command_topic: "cmnd/T1UK0301/POWER1"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false
+
+  - platform: mqtt
+    name: "Light 5"
+    state_topic: "stat/T1UK0301/POWER2"
+    command_topic: "cmnd/T1UK0301/POWER2"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false
+
+  - platform: mqtt
+    name: "Light 6"
+    state_topic: "stat/T1UK0301/POWER3"
+    command_topic: "cmnd/T1UK0301/POWER3"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false
+
+  - platform: mqtt
+    name: "Light 7"
+    state_topic: "stat/T1UK0201/POWER1"
+    command_topic: "cmnd/T1UK0201/POWER1"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false
+
+  - platform: mqtt
+    name: "Light 8"
+    state_topic: "stat/T1UK0201/POWER2"
+    command_topic: "cmnd/T1UK0201/POWER2"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false
+
+  - platform: mqtt
+    name: "Toilet Light"
+    state_topic: "stat/T1UK0202/POWER1"
+    command_topic: "cmnd/T1UK0202/POWER1"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false
+    
+  - platform: mqtt
+    name: "Toilet Exhaust Fan"
+    state_topic: "stat/T1UK0202/POWER2"
+    command_topic: "cmnd/T1UK0202/POWER2"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false
+    
+  - platform: mqtt
+    name: "Air-Con-1"
+    state_topic: "stat/sonoffTH/POWER"
+    command_topic: "cmnd/sonoffTH/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false    
+    hidden: true
+    
+  - platform: mqtt
+    name: "Air-Con-Window"
+    state_topic: "stat/T1UK0203/POWER1"
+    command_topic: "cmnd/T1UK0203/POWER1"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false
+    
+  - platform: mqtt
+    name: "Air-Con-Split"
+    state_topic: "stat/T1UK0203/POWER2"
+    command_topic: "cmnd/T1UK0203/POWER2"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false    
+
+  - platform: broadlink
+    host: 192.168.1.127
+    mac: 34:EA:34:43:02:CE
+    timeout: 5
+    switches:
+      air_con_remote:
+        friendly_name: "Split Type Air-Con"
+        command_on: "JgDKAJOPEjYSEhI2EjYSEhITETYSExMRETcRExETEjYSNhISEjYUERETERMRNxI2EjYSNhI2FDQSNhI2EhISEhITERMRExQQEhISEhISEjYSExETERMUNBI2EjYSNhISEjYSNhI2FKuTjxI2EhMRNxE3ERMRExI2EhIVDxI2EhMRExE3ETcRExE3FBASEhISEjUTNhI2EjYSNhUzEjYSLBwTERMRExETEhIUEBITERMRExE3ERMSEhISFTMSNhI2EjYSExE3ETcRNxEADQUAAAAAAAAAAAAAAAAAAA=="
+        command_off: "JgDKAJGSEzQUEBQ0FDQUERMREzUTERMREzUTERMRFDQUNBMRFDQUEBQ0FDQUNBQ0FBETNRM1EzUTERMRExETERQ0FBAUEBQ0FDQUNBQQFBETERMRExETERMRExEUNBQ0FDQUNBQ0E6yRkRQ0ExEUNBQ0FBAUERM0FBERExM1ExETERM1EzUTERM1EhISNhI2EjYSNhISEjYSNhM1EhMRExETERMRNxETEhITNRI2EjYSEhISEhISExETFBARExETEjYSNhI2EjYSNhIADQUAAAAAAAAAAAAAAAAAAA=="
+    
+# Show links to resources in log and frontend
+introduction:
+
+# Enables the frontend
+frontend:
+
+# Enables configuration UI
+config:
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+# http:
+#   base_url: example.duckdns.org:8123
+
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  # include_used_components: true
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time
+history:
+
+# View all events in a logbook
+logbook:
+
+# Enables a map showing the location of tracked devices
+map:
+
+# Track the sun
+sun:
+
+# Weather prediction
+sensor:
+  - platform: yr
+
+# Text to speech
+tts:
+  - platform: google_translate
+    service_name: google_say
+
+# Cloud
+cloud:
+
+wake_on_lan:
+
+media_player:
+  - platform: onkyo
+    host: 192.168.1.78
+    name: Onkyo_AMP
+   
+  - platform: webostv
+    host: 192.168.1.67
+    name: TV_1
+    mac: 78:5D:C8:9C:1D:71
+    filename: webostv.conf
+    turn_on_action:
+      service: wake_on_lan.send_magic_packet
+      data:
+        mac: 78:5D:C8:9C:1D:71
+        
+  - platform: webostv
+    host: 192.168.1.93
+    name: TV_2
+    mac: 78:5D:C8:9C:1D:8B
+    filename: webostv.conf
+    turn_on_action:
+      service: wake_on_lan.send_magic_packet
+      data:
+        mac: 78:5D:C8:9C:1D:8B
+
+
+
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
